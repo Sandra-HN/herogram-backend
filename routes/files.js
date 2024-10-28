@@ -70,6 +70,7 @@ router.post(
         tags: tagsString,
         views: 0,
         shareableLink: shareableLink,
+        createdBy: req.user.id,
       });
 
       res.status(201).json({ message: "File uploaded successfully", file });
@@ -86,6 +87,9 @@ router.post(
 router.get("/", authenticate, async (req, res) => {
   try {
     const files = await File.findAll({
+      where: {
+        createdBy: req.user.id, // Filter by the logged-in user's ID
+      },
       //attributes: ["id", "filename", "metadata", "tags", "views","path",], // Select relevant fields
     });
     res.status(200).json(files);

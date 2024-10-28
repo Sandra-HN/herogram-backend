@@ -9,7 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      // Association with User model
+      File.belongsTo(models.User, {
+        foreignKey: "createdBy",
+        as: "creator", // Alias for the association
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
+      });
     }
   }
 
@@ -38,6 +44,16 @@ module.exports = (sequelize, DataTypes) => {
       shareableLink: {
         type: DataTypes.STRING,
         allowNull: true,
+      },
+      createdBy: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: "Users", // Assumes there is a Users table
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
     },
     {
