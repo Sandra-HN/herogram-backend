@@ -57,7 +57,7 @@ router.post(
       // Convert tags to a comma-separated string
       const tagsString = Array.isArray(tags) ? tags.join(",") : tags;
       // Construct the shareable URL
-      const shareableLink = `http://134.209.243.73/uploads/${req.file.path
+      const shareableLink = `http://207.154.216.242/uploads/${req.file.path
         .replace(/\\/g, "/")
         .split("/")
         .slice(1)
