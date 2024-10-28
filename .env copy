@@ -1,0 +1,9 @@
+DB_NAME_DEVELOPMENT=file_management
+DB_NAME_TEST=file_management
+DB_NAME_PRODUCTION=file_management
+DB_USER=root
+DB_PASSWORD=sandra
+DB_HOST=127.0.0.1
+DB_DIALECT=mysql
+JWT_SECRET=kdjahsdjadsfsd
+MONGODB_URI=mongodb+srv://sandrahnaidy:<password>@cluster0.ha8gzi9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
