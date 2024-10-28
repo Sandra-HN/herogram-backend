@@ -33,6 +33,7 @@ app.use(
 );
 
 app.use("/uploads", express.static("uploads"));
+n;
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/files", fileRoutes);
